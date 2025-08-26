@@ -117,7 +117,8 @@ export async function verifyE2e(
         if (!buildId) {
           reviewComplete = false;
           alertWorthy = true;
-          core.warning(`🚫 ${e2eProject} (unable to retrieve percy build ID)`);
+          core.warning(`🚫 ${e2eProject} (unable to retrieve percy build ID after retries)`);
+          core.info(`Skipping Percy verification for ${e2eProject} - will allow E2E tests to complete without visual verification`);
           continue;
         }
 
@@ -269,13 +270,26 @@ export async function verifyE2e(
         ),
       )
       .filter(Boolean) as WorkflowJob[];
+    
     for (const jobForThisProject of jobsForThisProject) {
       const step = jobForThisProject.steps.find((step) =>
         step.name.startsWith('Percy'),
       );
       if (step && step.conclusion === 'success') {
-        const log = await downloadJobLogs(jobForThisProject.id);
-        const buildId = readPercyBuildNumberFromLogString(log);
+        const buildId = await retryWithExponentialBackoff(
+          async () => {
+            const log = await downloadJobLogs(jobForThisProject.id);
+            const extractedBuildId = readPercyBuildNumberFromLogString(log);
+            if (!extractedBuildId) {
+              throw new Error(`No build ID found in logs for job ${jobForThisProject.id}`);
+            }
+            return extractedBuildId;
+          },
+          3,
+          1000,
+          `retrieve build ID from logs for ${e2eProject}`
+        );
+        
         if (buildId) {
           return buildId;
         }
@@ -287,12 +301,45 @@ export async function verifyE2e(
   async function listJobsForWorkflowRun(githubApi: {
     listJobsForWorkflowRun: () => Promise<WorkflowJob[][]>;
   }): Promise<WorkflowJob[][]> {
-    let jobs = await githubApi.listJobsForWorkflowRun();
-    if (!jobs || jobs.length === 0 || jobs[0].length === 0) {
-      // Retry.
-      await new Promise((resolve) => setTimeout(resolve, 20));
-      jobs = await githubApi.listJobsForWorkflowRun();
+    return await retryWithExponentialBackoff(
+      async () => {
+        const jobs = await githubApi.listJobsForWorkflowRun();
+        if (!jobs || jobs.length === 0 || jobs[0].length === 0) {
+          throw new Error('No workflow jobs found');
+        }
+        return jobs;
+      },
+      3,
+      1000,
+      'fetch workflow jobs'
+    );
+  }
+
+  async function retryWithExponentialBackoff<T>(
+    operation: () => Promise<T>,
+    maxRetries: number,
+    baseDelayMs: number,
+    operationName: string
+  ): Promise<T> {
+    let lastError: Error;
+    
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
+      try {
+        return await operation();
+      } catch (error) {
+        lastError = error as Error;
+        
+        if (attempt === maxRetries) {
+          core.error(`Failed to ${operationName} after ${maxRetries} attempts: ${lastError.message}`);
+          throw lastError;
+        }
+        
+        const delayMs = baseDelayMs * Math.pow(2, attempt - 1);
+        core.info(`Attempt ${attempt} to ${operationName} failed, retrying in ${delayMs}ms: ${lastError.message}`);
+        await new Promise((resolve) => setTimeout(resolve, delayMs));
+      }
     }
-    return jobs;
+    
+    throw lastError!;
   }
 }
