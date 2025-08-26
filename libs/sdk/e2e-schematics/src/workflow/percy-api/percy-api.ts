@@ -60,25 +60,40 @@ interface Snapshot {
 }
 
 function getFetchJson(
-  fetchClient: (input: RequestInfo | URL) => Promise<Response>,
+  fetchClient: Fetch,
 ): FetchJson {
   return async (url: string, name: string) => {
-    return await fetchClient(url)
-      .then((res) => res.json())
-      .then((res) => {
-        if (res.data) {
-          return res.data;
-        } else {
-          return Promise.reject(
-            `Error fetching ${name}: ${JSON.stringify(res, null, 2)}`,
-          );
+    return await retryWithExponentialBackoff(
+      async () => {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 30000);
+        
+        try {
+          const response = await fetchClient(url, { signal: controller.signal });
+          clearTimeout(timeoutId);
+          
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+          }
+          
+          const res = await response.json();
+          if (res.data) {
+            return res.data;
+          } else {
+            throw new Error(`Invalid response format for ${name}: ${JSON.stringify(res, null, 2)}`);
+          }
+        } catch (error) {
+          clearTimeout(timeoutId);
+          if ((error as Error).name === 'AbortError') {
+            throw new Error(`Timeout after 30s fetching ${name}`);
+          }
+          throw error;
         }
-      })
-      .catch((error) => {
-        return Promise.reject(
-          new Error(`Error fetching ${name}`, { cause: error }),
-        );
-      });
+      },
+      3,
+      1000,
+      `fetch ${name}`
+    );
   };
 }
 
@@ -92,6 +107,17 @@ export async function checkPercyBuild(
   const fetchJson = getFetchJson(fetchClient);
 
   try {
+    const isHealthy = await checkPercyApiHealth(fetchClient, logger);
+    if (!isHealthy) {
+      logger.warning(`Percy API is not available, skipping build check for ${project}`);
+      return {
+        project,
+        state: undefined,
+        approved: false,
+        removedSnapshots: [],
+      };
+    }
+
     const build = await getBuild(buildId, fetchJson);
 
     if (build?.id && `${build.id}` === `${buildId}`) {
@@ -112,7 +138,8 @@ export async function checkPercyBuild(
       logger.warning(`No Percy build found for ${project} build ${buildId}`);
     }
   } catch (error) {
-    logger.error(`Error checking Percy build\n\n${(error as Error).stack}`);
+    logger.error(`Error checking Percy build for ${project}: ${(error as Error).message}`);
+    logger.info(`Continuing without Percy verification for ${project} due to API error`);
   }
   return {
     project,
@@ -308,4 +335,60 @@ async function getRemovedSnapshots(
       .map((snapshot: Snapshot) => snapshot.attributes.name)
       .sort((a: string, b: string) => a.localeCompare(b)),
   );
+}
+
+async function retryWithExponentialBackoff<T>(
+  operation: () => Promise<T>,
+  maxRetries: number,
+  baseDelayMs: number,
+  operationName: string
+): Promise<T> {
+  let lastError: Error;
+  
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      return await operation();
+    } catch (error) {
+      lastError = error as Error;
+      
+      if (attempt === maxRetries) {
+        throw new Error(`Failed to ${operationName} after ${maxRetries} attempts: ${lastError.message}`);
+      }
+      
+      const shouldRetry = lastError.message.includes('HTTP 429') || 
+                         lastError.message.includes('HTTP 5') ||
+                         lastError.message.includes('Timeout') ||
+                         lastError.message.includes('fetch');
+      
+      if (!shouldRetry) {
+        throw lastError;
+      }
+      
+      const delayMs = baseDelayMs * Math.pow(2, attempt - 1);
+      await new Promise((resolve) => setTimeout(resolve, delayMs));
+    }
+  }
+  
+  throw lastError!;
+}
+
+async function checkPercyApiHealth(
+  fetchClient: Fetch,
+  logger: Logger
+): Promise<boolean> {
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
+    
+    const response = await fetchClient('https://percy.io/api/v1/user', { 
+      signal: controller.signal,
+      method: 'HEAD'
+    });
+    clearTimeout(timeoutId);
+    
+    return response.ok;
+  } catch (error) {
+    logger.info(`Percy API health check failed: ${(error as Error).message}`);
+    return false;
+  }
 }
