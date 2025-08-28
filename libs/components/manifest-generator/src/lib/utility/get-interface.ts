@@ -21,6 +21,7 @@ function getInterfaceProperties(
       const {
         codeExample,
         codeExampleLanguage,
+        defaultValue,
         deprecationReason,
         description,
         isDeprecated,
@@ -33,6 +34,7 @@ function getInterfaceProperties(
       properties.push({
         codeExample,
         codeExampleLanguage,
+        defaultValue,
         deprecationReason,
         description,
         isDeprecated,
