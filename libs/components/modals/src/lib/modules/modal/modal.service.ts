@@ -84,7 +84,6 @@ export class SkyModalService implements SkyModalServiceInterface {
       providers: [],
       fullPage: false,
       size: 'medium',
-      tiledBody: false,
     };
     let params: SkyModalConfigurationInterface = {};
     let method: any = undefined;
