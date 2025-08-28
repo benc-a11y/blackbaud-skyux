@@ -119,12 +119,6 @@ export class SkyModalComponent implements AfterViewInit, OnDestroy, OnInit {
 
   public ariaRoleOrDefault = ARIA_ROLE_DEFAULT;
 
-  /**
-   * @internal
-   * @deprecated
-   */
-  @Input()
-  public tiledBody: boolean | undefined;
 
   /**
    * Used by the confirm component to set descriptive text without using a
@@ -158,10 +152,6 @@ export class SkyModalComponent implements AfterViewInit, OnDestroy, OnInit {
 
   public ariaOwns: string | null = null;
 
-  /**
-   * @deprecated
-   */
-  public legacyHelpKey: string | undefined;
 
   public modalState = 'in';
 
@@ -205,11 +195,7 @@ export class SkyModalComponent implements AfterViewInit, OnDestroy, OnInit {
   readonly #themeSvc = inject(SkyThemeService, { optional: true });
 
   constructor() {
-    this.ariaDescribedBy = this.#config.ariaDescribedBy;
-    this.ariaLabelledBy = this.#config.ariaLabelledBy;
     this.ariaRole = this.#config.ariaRole;
-    this.legacyHelpKey = this.#config.helpKey;
-    this.tiledBody = this.#config.tiledBody;
     this.wrapperClass = this.#config.wrapperClass;
 
     this.size = this.#config.fullPage
@@ -312,14 +298,6 @@ export class SkyModalComponent implements AfterViewInit, OnDestroy, OnInit {
     this.#ngUnsubscribe.complete();
   }
 
-  /**
-   * @deprecated
-   */
-  public helpButtonClick(): void {
-    if (this.legacyHelpKey) {
-      this.#hostService.onOpenHelp(this.legacyHelpKey);
-    }
-  }
 
   public closeButtonClick(): void {
     this.#hostService.onClose();

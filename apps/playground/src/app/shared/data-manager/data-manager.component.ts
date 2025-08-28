@@ -106,7 +106,6 @@ export class DataManagerComponent implements OnInit {
 
     const options = {
       providers: [{ provide: DataManagerEditModalContext, useValue: context }],
-      ariaDescribedBy: 'docs-edit-grid-modal-content',
       size: 'large',
     };
 
