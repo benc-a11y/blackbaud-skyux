@@ -1,7 +1,5 @@
 import { StaticProvider } from '@angular/core';
 
-// TODO: defaults won't show in the generated docs until this work is done:
-// https://github.com/blackbaud/skyux-docs-tools/issues/38
 
 /**
  * Specifies configuration options for creating a modal.

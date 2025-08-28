@@ -22,6 +22,7 @@ export interface SkyManifestInterfaceDefinition
  */
 export interface SkyManifestInterfacePropertyDefinition
   extends SkyManifestChildDefinition {
+  defaultValue?: string;
   isOptional?: boolean;
   kind: 'interface-property';
 }
