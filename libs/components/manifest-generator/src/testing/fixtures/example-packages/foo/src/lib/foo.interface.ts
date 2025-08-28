@@ -10,6 +10,11 @@ export interface FooInterface<A, B> {
    */
   baz: B;
   /**
+   * This describes a property with a default value.
+   * @default "test-default"
+   */
+  withDefault?: string;
+  /**
    * This describes the index signature.
    * @param _ The name of the thing.
    */
