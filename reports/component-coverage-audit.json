@@ -1,0 +1,496 @@
+{
+  "summary": {
+    "total": 54,
+    "hasHarness": 29,
+    "legacyFixturesOnly": 3,
+    "noTesting": 22
+  },
+  "components": [
+    {
+      "name": "a11y",
+      "packageName": "@skyux/a11y",
+      "mainPath": "libs/components/a11y/src/index.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/a11y/testing",
+      "status": "LEGACY_FIXTURES_ONLY"
+    },
+    {
+      "name": "action-bars",
+      "packageName": "@skyux/action-bars",
+      "mainPath": "libs/components/action-bars/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/action-bars/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "ag-grid",
+      "packageName": "@skyux/ag-grid",
+      "mainPath": "libs/components/ag-grid/src/index.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": false,
+      "testingDir": null,
+      "status": "NO_TESTING"
+    },
+    {
+      "name": "angular-tree-component",
+      "packageName": "@skyux/angular-tree-component",
+      "mainPath": "libs/components/angular-tree-component/src/index.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": false,
+      "testingDir": null,
+      "status": "NO_TESTING"
+    },
+    {
+      "name": "animations",
+      "packageName": "@skyux/animations",
+      "mainPath": "libs/components/animations/src/index.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": false,
+      "testingDir": null,
+      "status": "NO_TESTING"
+    },
+    {
+      "name": "assets",
+      "packageName": "@skyux/assets",
+      "mainPath": "libs/components/assets/src/index.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": false,
+      "testingDir": null,
+      "status": "NO_TESTING"
+    },
+    {
+      "name": "autonumeric",
+      "packageName": "@skyux/autonumeric",
+      "mainPath": "libs/components/autonumeric/src/index.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": false,
+      "testingDir": null,
+      "status": "NO_TESTING"
+    },
+    {
+      "name": "avatar",
+      "packageName": "@skyux/avatar",
+      "mainPath": "libs/components/avatar/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/avatar/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "code-examples",
+      "packageName": "@skyux/code-examples",
+      "mainPath": "libs/components/code-examples/src/index.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": false,
+      "testingDir": null,
+      "status": "NO_TESTING"
+    },
+    {
+      "name": "colorpicker",
+      "packageName": "@skyux/colorpicker",
+      "mainPath": "libs/components/colorpicker/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/colorpicker/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "config",
+      "packageName": "@skyux/config",
+      "mainPath": "libs/components/config/src/index.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": false,
+      "testingDir": null,
+      "status": "NO_TESTING"
+    },
+    {
+      "name": "core",
+      "packageName": "@skyux/core",
+      "mainPath": "libs/components/core/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/core/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "data-manager",
+      "packageName": "@skyux/data-manager",
+      "mainPath": "libs/components/data-manager/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/data-manager/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "datetime",
+      "packageName": "@skyux/datetime",
+      "mainPath": "libs/components/datetime/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/datetime/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "docs-tools",
+      "packageName": "@skyux/docs-tools",
+      "mainPath": "libs/components/docs-tools/src/index.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": false,
+      "testingDir": null,
+      "status": "NO_TESTING"
+    },
+    {
+      "name": "errors",
+      "packageName": "@skyux/errors",
+      "mainPath": "libs/components/errors/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/errors/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "filter-bar",
+      "packageName": "@skyux/filter-bar",
+      "mainPath": "libs/components/filter-bar/src/index.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/filter-bar/testing",
+      "status": "LEGACY_FIXTURES_ONLY"
+    },
+    {
+      "name": "filter-bar-testing",
+      "packageName": "@skyux/filter-bar-testing",
+      "mainPath": "libs/components/filter-bar/testing/src/public-api.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": false,
+      "testingDir": null,
+      "status": "NO_TESTING"
+    },
+    {
+      "name": "flyout",
+      "packageName": "@skyux/flyout",
+      "mainPath": "libs/components/flyout/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/flyout/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "forms",
+      "packageName": "@skyux/forms",
+      "mainPath": "libs/components/forms/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/forms/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "grids",
+      "packageName": "@skyux/grids",
+      "mainPath": "libs/components/grids/src/index.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/grids/testing",
+      "status": "LEGACY_FIXTURES_ONLY"
+    },
+    {
+      "name": "help-inline",
+      "packageName": "@skyux/help-inline",
+      "mainPath": "libs/components/help-inline/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/help-inline/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "i18n",
+      "packageName": "@skyux/i18n",
+      "mainPath": "libs/components/i18n/src/index.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": false,
+      "testingDir": null,
+      "status": "NO_TESTING"
+    },
+    {
+      "name": "icon",
+      "packageName": "@skyux/icon",
+      "mainPath": "libs/components/icon/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/icon/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "indicators",
+      "packageName": "@skyux/indicators",
+      "mainPath": "libs/components/indicators/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/indicators/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "inline-form",
+      "packageName": "@skyux/inline-form",
+      "mainPath": "libs/components/inline-form/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/inline-form/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "layout",
+      "packageName": "@skyux/layout",
+      "mainPath": "libs/components/layout/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/layout/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "list-builder",
+      "packageName": "@skyux/list-builder",
+      "mainPath": "libs/components/list-builder/src/index.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": false,
+      "testingDir": null,
+      "status": "NO_TESTING"
+    },
+    {
+      "name": "list-builder-common",
+      "packageName": "@skyux/list-builder-common",
+      "mainPath": "libs/components/list-builder-common/src/index.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": false,
+      "testingDir": null,
+      "status": "NO_TESTING"
+    },
+    {
+      "name": "list-builder-view-checklist",
+      "packageName": "@skyux/list-builder-view-checklist",
+      "mainPath": "libs/components/list-builder-view-checklist/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/list-builder-view-checklist/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "list-builder-view-grids",
+      "packageName": "@skyux/list-builder-view-grids",
+      "mainPath": "libs/components/list-builder-view-grids/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/list-builder-view-grids/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "lists",
+      "packageName": "@skyux/lists",
+      "mainPath": "libs/components/lists/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/lists/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "lookup",
+      "packageName": "@skyux/lookup",
+      "mainPath": "libs/components/lookup/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/lookup/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "manifest",
+      "packageName": "@skyux/manifest",
+      "mainPath": "dist/libs/components/manifest",
+      "hasTestingExport": false,
+      "hasTestingDirectory": false,
+      "testingDir": null,
+      "status": "NO_TESTING"
+    },
+    {
+      "name": "manifest-local",
+      "packageName": "@skyux/manifest-local",
+      "mainPath": "libs/components/manifest/src/index.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": false,
+      "testingDir": null,
+      "status": "NO_TESTING"
+    },
+    {
+      "name": "modals",
+      "packageName": "@skyux/modals",
+      "mainPath": "libs/components/modals/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/modals/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "navbar",
+      "packageName": "@skyux/navbar",
+      "mainPath": "libs/components/navbar/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/navbar/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "packages",
+      "packageName": "@skyux/packages",
+      "mainPath": "libs/components/packages/src/index.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": false,
+      "testingDir": null,
+      "status": "NO_TESTING"
+    },
+    {
+      "name": "pages",
+      "packageName": "@skyux/pages",
+      "mainPath": "libs/components/pages/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/pages/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "phone-field",
+      "packageName": "@skyux/phone-field",
+      "mainPath": "libs/components/phone-field/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/phone-field/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "popovers",
+      "packageName": "@skyux/popovers",
+      "mainPath": "libs/components/popovers/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/popovers/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "progress-indicator",
+      "packageName": "@skyux/progress-indicator",
+      "mainPath": "libs/components/progress-indicator/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/progress-indicator/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "router",
+      "packageName": "@skyux/router",
+      "mainPath": "libs/components/router/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/router/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "select-field",
+      "packageName": "@skyux/select-field",
+      "mainPath": "libs/components/select-field/src/index.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": false,
+      "testingDir": null,
+      "status": "NO_TESTING"
+    },
+    {
+      "name": "split-view",
+      "packageName": "@skyux/split-view",
+      "mainPath": "libs/components/split-view/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/split-view/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "storybook",
+      "packageName": "@skyux/storybook",
+      "mainPath": "libs/components/storybook/src/index.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": false,
+      "testingDir": null,
+      "status": "NO_TESTING"
+    },
+    {
+      "name": "storybook/components",
+      "packageName": "@skyux/storybook/components",
+      "mainPath": "libs/components/storybook/src/index-components.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": false,
+      "testingDir": null,
+      "status": "NO_TESTING"
+    },
+    {
+      "name": "storybook/font-loading",
+      "packageName": "@skyux/storybook/font-loading",
+      "mainPath": "libs/components/storybook/src/lib/font-loading/font-loading.service.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": false,
+      "testingDir": null,
+      "status": "NO_TESTING"
+    },
+    {
+      "name": "tabs",
+      "packageName": "@skyux/tabs",
+      "mainPath": "libs/components/tabs/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/tabs/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "text-editor",
+      "packageName": "@skyux/text-editor",
+      "mainPath": "libs/components/text-editor/src/index.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": false,
+      "testingDir": null,
+      "status": "NO_TESTING"
+    },
+    {
+      "name": "theme",
+      "packageName": "@skyux/theme",
+      "mainPath": "libs/components/theme/src/index.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": false,
+      "testingDir": null,
+      "status": "NO_TESTING"
+    },
+    {
+      "name": "tiles",
+      "packageName": "@skyux/tiles",
+      "mainPath": "libs/components/tiles/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/tiles/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "toast",
+      "packageName": "@skyux/toast",
+      "mainPath": "libs/components/toast/src/index.ts",
+      "hasTestingExport": true,
+      "hasTestingDirectory": true,
+      "testingDir": "libs/components/toast/testing",
+      "status": "HAS_HARNESS"
+    },
+    {
+      "name": "validation",
+      "packageName": "@skyux/validation",
+      "mainPath": "libs/components/validation/src/index.ts",
+      "hasTestingExport": false,
+      "hasTestingDirectory": false,
+      "testingDir": null,
+      "status": "NO_TESTING"
+    }
+  ]
+}

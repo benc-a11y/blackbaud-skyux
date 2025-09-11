@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "FixtureToHarnessSchema",
+  "title": "Fixture to Harness Migration",
+  "type": "object",
+  "description": "Migrates legacy fixture usage to modern harness patterns",
+  "properties": {
+    "path": {
+      "type": "string",
+      "description": "Path to migrate (defaults to entire project)",
+      "default": ""
+    },
+    "dryRun": {
+      "type": "boolean",
+      "description": "Run migration in dry-run mode to preview changes",
+      "default": false
+    }
+  }
+}
