@@ -1,12 +1,12 @@
 import { HarnessPredicate } from '@angular/cdk/testing';
-import { SkyComponentHarness } from '@skyux/core/testing';
+import { SkyQueryableComponentHarness } from '@skyux/core/testing';
 
 import { SkyGridHarnessFilters } from './grid-harness-filters';
 
 /**
  * Harness for interacting with a grid component in tests.
  */
-export class SkyGridHarness extends SkyComponentHarness {
+export class SkyGridHarness extends SkyQueryableComponentHarness {
   /**
    * @internal
    */
@@ -104,7 +104,8 @@ export class SkyGridHarness extends SkyComponentHarness {
     const rowData: string[][] = [];
     
     for (const row of rows) {
-      const cells = await this.locatorForAll(`tbody tr:nth-child(${rows.indexOf(row) + 1}) td`)();
+      const rowIndex = rows.indexOf(row);
+      const cells = await this.locatorForAll(`tbody tr:nth-child(${rowIndex + 1}) td`)();
       const cellTexts = await Promise.all(cells.map(cell => cell.text()));
       rowData.push(cellTexts);
     }
