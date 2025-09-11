@@ -142,20 +142,7 @@ sky-input-box .sky-lookup {
   width: 100%;
   // Since we are applying the host template directly - add the same spacing styles that we do around a directly projected text area.
   // Calculation taken from input box
-  margin-top: var(
-    --sky-override-lookup-input-box-margin-top,
-    calc(
-      -1 *
-        (
-          calc(
-              var(--sky-font-line_height-input-label) *
-                var(--sky-font-size-input-label)
-            ) +
-            var(--sky-comp-input-label-space-inset-top) +
-            var(--sky-comp-input-label-space-inset-bottom)
-        )
-    )
-  );
+  margin-top: var(--sky-override-lookup-input-box-margin-top, 0);
   padding-top: var(
     --sky-override-lookup-input-box-padding-top,
     calc(
