@@ -21,7 +21,7 @@ describe('Rich text display', () => {
 
   it('should render the component template', () => {
     fixture.detectChanges();
-    const compiled = fixture.nativeElement;
+    const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled).toBeTruthy();
   });
 });
