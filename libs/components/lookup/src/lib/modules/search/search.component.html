@@ -13,7 +13,7 @@
   </div>
   <div
     class="sky-search-dismiss-container"
-    [hidden]="searchButtonShown"
+    [hidden]="searchButtonShown && !mobileSearchShown"
     [ngClass]="{
       'sky-search-dismiss-absolute': mobileSearchShown || isFullWidth
     }"

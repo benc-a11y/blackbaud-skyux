@@ -187,26 +187,8 @@ sky-search {
     }
 
     .sky-input-box .sky-input-group-btn .sky-btn.sky-search-btn {
-      height: calc(
-        calc(
-            var(--sky-font-line_height-input-val) *
-              var(--sky-font-size-input-val)
-          ) +
-          calc(
-            var(--sky-comp-search-space-inset-top) +
-              var(--sky-comp-search-space-inset-bottom)
-          )
-      );
-      width: calc(
-        calc(
-            var(--sky-font-line_height-input-val) *
-              var(--sky-font-size-input-val)
-          ) +
-          calc(
-            var(--sky-comp-search-space-inset-left) +
-              var(--sky-comp-search-space-inset-right)
-          )
-      );
+      height: var(--sky-size-picker_btn);
+      width: var(--sky-size-picker_btn);
 
       .sky-icon.sky-i-close {
         color: var(--sky-color-icon-default);
@@ -216,26 +198,8 @@ sky-search {
 
     .sky-search-btn-dismiss {
       color: var(--sky-color-icon-default);
-      height: calc(
-        calc(
-            var(--sky-font-line_height-input-val) *
-              var(--sky-font-size-input-val)
-          ) +
-          calc(
-            var(--sky-comp-button-space-inset-top) +
-              var(--sky-comp-button-space-inset-bottom)
-          )
-      );
-      width: calc(
-        calc(
-            var(--sky-font-line_height-input-val) *
-              var(--sky-font-size-input-val)
-          ) +
-          calc(
-            var(--sky-comp-button-space-inset-left) +
-              var(--sky-comp-button-space-inset-right)
-          )
-      );
+      height: var(--sky-size-picker_btn);
+      width: var(--sky-size-picker_btn);
       padding: 0;
     }
 
