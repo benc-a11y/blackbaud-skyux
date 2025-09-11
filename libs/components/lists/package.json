@@ -46,9 +46,9 @@
   "sideEffects": false,
   "overrides": {
     "ng2-dragula@5.1.0": {
-      "@angular/animations": ">=19.0.0",
-      "@angular/core": ">=19.0.0",
-      "@angular/common": ">=19.0.0"
+      "@angular/animations": ">=20.0.0",
+      "@angular/core": ">=20.0.0",
+      "@angular/common": ">=20.0.0"
     }
   }
 }
