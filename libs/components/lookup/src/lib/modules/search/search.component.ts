@@ -328,11 +328,11 @@ export class SkySearchComponent implements OnDestroy, OnInit, OnChanges {
       const breakpoint = this.#breakpoint();
 
       this.searchButtonShown =
-        event.toState === INPUT_HIDDEN_STATE && breakpoint === 'xs';
+        event.toState === INPUT_HIDDEN_STATE && (breakpoint === 'xs' || breakpoint === 'sm');
 
       if (
-        (event.toState === INPUT_HIDDEN_STATE && breakpoint === 'xs') ||
-        breakpoint !== 'xs'
+        (event.toState === INPUT_HIDDEN_STATE && (breakpoint === 'xs' || breakpoint === 'sm')) ||
+        (breakpoint !== 'xs' && breakpoint !== 'sm')
       ) {
         this.mobileSearchShown = false;
       }
@@ -375,7 +375,7 @@ export class SkySearchComponent implements OnDestroy, OnInit, OnChanges {
 
   #mediaQueryCallback(breakpoint: SkyBreakpoint): void {
     if (this.#searchShouldCollapse()) {
-      if (breakpoint === 'xs') {
+      if (breakpoint === 'xs' || breakpoint === 'sm') {
         this.inputAnimate = INPUT_HIDDEN_STATE;
       } else if (this.inputAnimate !== INPUT_SHOWN_STATE) {
         this.inputAnimate = INPUT_SHOWN_STATE;
