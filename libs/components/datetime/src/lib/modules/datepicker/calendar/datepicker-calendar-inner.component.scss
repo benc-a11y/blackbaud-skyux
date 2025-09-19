@@ -237,7 +237,7 @@
     );
     height: var(
       --sky-override-datepicker-day-button-size,
-      var(--sky-size-picker_btn)
+      var(--sky-comp-button-size-m)
     );
     line-height: var(
       --sky-override-datepicker-day-btn-line-height,
@@ -247,7 +247,7 @@
     padding: var(--sky-override-datepicker-day-button-padding, 0);
     width: var(
       --sky-override-datepicker-day-button-size,
-      var(--sky-size-picker_btn)
+      var(--sky-comp-button-size-m)
     );
   }
 

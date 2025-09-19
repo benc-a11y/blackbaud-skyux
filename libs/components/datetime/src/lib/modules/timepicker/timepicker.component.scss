@@ -92,11 +92,11 @@
         var(--sky-override-timepicker-button-padding-horizontal, auto);
       width: var(
         --sky-override-timepicker-button-width,
-        var(--sky-size-picker_btn)
+        var(--sky-comp-button-size-m)
       );
       height: var(
         --sky-override-timepicker-button-height,
-        var(--sky-size-picker_btn)
+        var(--sky-comp-button-size-m)
       );
 
       &:focus-visible:not(:active) {
