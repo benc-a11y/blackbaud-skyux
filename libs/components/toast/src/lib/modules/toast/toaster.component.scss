@@ -3,7 +3,7 @@
 @use 'libs/components/theme/src/lib/styles/variables' as *;
 
 @include compatMixins.sky-default-overrides('.sky-toaster') {
-  --sky-override-toaster-max-width: 300px;
+  --sky-override-toaster-max-width: #{$sky-toaster-max-width};
   --sky-override-toaster-padding: 0 #{$sky-margin-double $sky-margin-double} 0;
 }
 
