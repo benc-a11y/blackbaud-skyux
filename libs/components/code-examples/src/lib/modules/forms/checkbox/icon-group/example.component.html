@@ -1,11 +1,13 @@
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
   <sky-checkbox-group
+    data-sky-id="checkbox-icon-group"
     headingText="Text formatting"
     [formGroup]="formGroup"
     [headingHidden]="true"
     [stacked]="true"
   >
     <sky-checkbox
+      data-sky-id="bold-checkbox"
       formControlName="bold"
       iconName="text-bold"
       labelHidden="true"
