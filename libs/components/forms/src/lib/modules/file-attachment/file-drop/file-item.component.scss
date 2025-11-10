@@ -13,7 +13,7 @@
   --sky-override-file-item-name-font-size: #{$sky-font-size-base};
   --sky-override-file-item-name-font-weight: bolder;
   --sky-override-file-item-padding: #{$sky-padding-even-default};
-  --sky-override-file-item-preview-img-box-shadow: 0 0 5px #666;
+  --sky-override-file-item-preview-img-box-shadow: 0 0 5px #{$sky-color-gray-06};
   --sky-override-file-item-preview-other-color: #{$sky-text-color-deemphasized};
   --sky-override-file-item-preview-other-font-size: 100px;
   --sky-override-file-item-size-line-height: normal;
