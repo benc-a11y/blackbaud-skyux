@@ -27,7 +27,7 @@
   }
 
   .ag-layout-auto-height .ag-body .ag-center-cols-viewport {
-    min-height: var(--sky-ag-grid-min-height, 50px);
+    min-height: var(--sky-ag-grid-min-height, var(--sky-space-lg));
   }
 
   .ag-scrollbar-invisible.sky-viewkeeper-fixed {
@@ -40,14 +40,14 @@
   }
 
   .ag-cell.ag-cell-focus a:focus-visible:not(:active) {
-    margin-inline-start: 2px;
-    outline-width: 2px;
+    margin-inline-start: var(--sky-border-width-input-focus);
+    outline-width: var(--sky-border-width-input-focus);
     outline-style: solid;
     outline-offset: 0;
   }
 
   .ag-ltr .ag-header-cell-resize {
-    right: -4px;
+    right: calc(var(--sky-space-2xs) * -1);
   }
 
   .ag-checkbox {
@@ -254,7 +254,7 @@ ag-grid-angular {
   .sky-ag-grid-cell-currency,
   .sky-ag-grid-cell-right-aligned {
     text-align: right;
-    padding-right: 12px;
+    padding-right: var(--sky-space-inset-m);
   }
 
   .sky-ag-grid-cell-number,
@@ -297,7 +297,7 @@ sky-ag-grid-wrapper .sky-ag-grid-text-selection .ag-root-wrapper {
 }
 
 .sky-theme-default .sky-ag-grid-row-delete .sky-btn {
-  padding: 4px 12px;
+  padding: var(--sky-space-2xs) var(--sky-space-inset-m);
 }
 
 ag-grid-angular + sky-infinite-scroll {

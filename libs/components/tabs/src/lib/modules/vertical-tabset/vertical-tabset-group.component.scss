@@ -4,7 +4,7 @@
   as verticalTabsetButtonMixins;
 
 @include compatMixins.sky-default-overrides('.sky-vertical-tabset-group') {
-  --sky-override-vertical-tabset-group-border: 1px solid
+  --sky-override-vertical-tabset-group-border: var(--sky-border-width-input-base) solid
     #{$sky-border-color-neutral-light};
   --sky-override-vertical-tabset-group-button-font-color: buttontext;
   --sky-override-vertical-tabset-group-button-background-color-hover: transparent;

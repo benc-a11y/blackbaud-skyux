@@ -4,8 +4,8 @@
 @include compatMixins.sky-default-overrides(
   '.sky-split-view-workspace-footer'
 ) {
-  --sky-override-split-view-workspace-footer-padding: 10px;
-  --sky-override-split-view-workspace-footer-box-shadow: 0 -3px 3px 0
+  --sky-override-split-view-workspace-footer-padding: #{$sky-padding};
+  --sky-override-split-view-workspace-footer-box-shadow: 0 calc(var(--sky-space-3xs) * -1) var(--sky-space-3xs) 0
     #{$sky-color-gray-20};
 }
 

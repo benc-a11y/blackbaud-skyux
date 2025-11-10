@@ -3,14 +3,14 @@
 @use '../../styles/mixins' as popoverMixins;
 @use 'libs/components/theme/src/lib/styles/compat-tokens-mixins' as compatMixins;
 
-$popover-arrow-size: 20px;
-$popover-border-size: 10px;
-$popover-max-width: 276px;
+$popover-arrow-size: #{$sky-padding-double};
+$popover-border-size: #{$sky-padding};
+$popover-max-width: #{$sky-popover-max-width};
 
 @include compatMixins.sky-default-overrides('.sky-popover-container') {
   --sky-override-popover-background-color: #{$sky-color-white};
   --sky-override-popover-max-width: #{$popover-max-width};
-  --sky-override-popover-with-header-top-padding: 2px;
+  --sky-override-popover-with-header-top-padding: var(--sky-border-width-input-focus);
 }
 
 .sky-popover-container {

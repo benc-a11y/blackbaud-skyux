@@ -1,8 +1,9 @@
 @use 'libs/components/theme/src/lib/styles/mixins' as mixins;
+@use 'libs/components/theme/src/lib/styles/variables' as *;
 
 .sky-list-secondary-actions {
   ::ng-deep .sky-dropdown-button-type-select {
-    padding: 6px 12px;
+    padding: $sky-padding-half $sky-padding;
   }
 }
 

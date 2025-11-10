@@ -6,7 +6,7 @@
   --sky-override-summary-action-bar-actions-padding: #{$sky-padding
     $sky-padding-double $sky-padding $sky-padding};
   --sky-override-summary-action-bar-background-color: #{$sky-color-white};
-  --sky-override-summary-action-bar-box-shadow: 0 -3px 3px 0
+  --sky-override-summary-action-bar-box-shadow: 0 calc(var(--sky-space-3xs) * -1) var(--sky-space-3xs) 0
     #{$sky-color-gray-20};
   --sky-override-summary-action-bar-details-expand-margin-right: #{$sky-margin};
   --sky-override-summary-action-bar-details-collapse-margin-left: 0;
@@ -18,9 +18,9 @@
   --sky-override-summary-action-bar-summary-body-collapsible-padding: #{$sky-padding};
   --sky-override-summary-action-bar-summary-body-padding: 0 0 0
     #{$sky-padding-double};
-  --sky-override-summary-action-bar-summary-border-left: 1px solid
+  --sky-override-summary-action-bar-summary-border-left: var(--sky-border-width-input-base) solid
     #{$sky-border-color-neutral-light};
-  --sky-override-summary-action-bar-summary-collapsible-border-bottom: 1px solid
+  --sky-override-summary-action-bar-summary-collapsible-border-bottom: var(--sky-border-width-input-base) solid
     #{$sky-border-color-neutral-light};
   --sky-override-summary-action-bar-summary-items-margin-right: #{$sky-margin};
   --sky-override-summary-action-bar-summary-margin: #{$sky-margin} 0;

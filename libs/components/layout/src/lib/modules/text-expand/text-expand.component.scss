@@ -1,11 +1,12 @@
 @use 'libs/components/theme/src/lib/styles/compat-tokens-mixins' as compatMixins;
+@use 'libs/components/theme/src/lib/styles/variables' as *;
 
 @include compatMixins.sky-default-overrides('.sky-text-expand-container') {
-  --sky-text-expand-see-more-margin-left: 5px;
+  --sky-text-expand-see-more-margin-left: #{$sky-margin-half};
 }
 
 .sky-text-expand-ellipsis {
-  letter-spacing: 2px;
+  letter-spacing: var(--sky-space-3xs);
   white-space: nowrap;
 }
 

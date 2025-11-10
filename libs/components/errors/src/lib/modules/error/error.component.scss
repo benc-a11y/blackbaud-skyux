@@ -4,7 +4,7 @@
 
 @include compatMixins.sky-default-overrides('.sky-error') {
   --sky-override-error-margin-top: 0;
-  --sky-override-error-padding-top: 60px;
+  --sky-override-error-padding-top: #{$sky-error-padding-top};
 }
 
 .sky-error {
@@ -38,25 +38,25 @@
 }
 
 .sky-error-broken-image {
-  height: 110px;
-  width: 170px;
+  height: $sky-error-image-height;
+  width: $sky-error-image-width-broken;
   background-image: url(https://sky.blackbaudcdn.net/static/skyux-public-assets/1.0.0-beta.5/assets/images/errors/broken.svg);
 }
 
 .sky-error-construction-image {
-  height: 110px;
-  width: 109px;
+  height: $sky-error-image-height;
+  width: $sky-error-image-width-construction;
   background-image: url(https://sky.blackbaudcdn.net/static/skyux-public-assets/1.0.0-beta.5/assets/images/errors/construction.svg);
 }
 
 .sky-error-notfound-image {
-  height: 110px;
-  width: 169px;
+  height: $sky-error-image-height;
+  width: $sky-error-image-width-notfound;
   background-image: url(https://sky.blackbaudcdn.net/static/skyux-public-assets/1.0.0-beta.5/assets/images/errors/notfound.svg);
 }
 
 .sky-error-security-image {
-  height: 110px;
-  width: 97px;
+  height: $sky-error-image-height;
+  width: $sky-error-image-width-security;
   background-image: url(https://sky.blackbaudcdn.net/static/skyux-public-assets/1.0.0-beta.5/assets/images/errors/security.svg);
 }

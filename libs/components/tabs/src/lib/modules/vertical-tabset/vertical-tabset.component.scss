@@ -8,11 +8,11 @@
     #{$sky-margin};
   --sky-override-vertical-tabset-content-margin-xs: #{$sky-margin} 0 0
     #{$sky-margin};
-  --sky-override-vertical-tabset-group-container-border-right: 1px solid
+  --sky-override-vertical-tabset-group-container-border-right: var(--sky-border-width-input-base) solid
     #{$sky-border-color-neutral-medium};
   --sky-override-vertical-tabset-group-container-padding: 0;
-  --sky-override-vertical-tabset-modal-margin-adjustment: -15px;
-  --sky-override-vertical-tabset-modal-margin-adjustment-with-group: -15px;
+  --sky-override-vertical-tabset-modal-margin-adjustment: calc(#{$sky-padding} * -1);
+  --sky-override-vertical-tabset-modal-margin-adjustment-with-group: calc(#{$sky-padding} * -1);
   --sky-override-vertical-tabset-show-tabs-margin-top: #{$sky-margin};
 }
 

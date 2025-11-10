@@ -1,7 +1,8 @@
 @use 'libs/components/theme/src/lib/styles/compat-tokens-mixins' as compatMixins;
+@use 'libs/components/theme/src/lib/styles/variables' as *;
 
 @include compatMixins.sky-default-overrides('.sky-validator-cell') {
-  --sky-override-cell-validator-space: 5px;
+  --sky-override-cell-validator-space: #{$sky-margin-half};
 }
 
 :host {

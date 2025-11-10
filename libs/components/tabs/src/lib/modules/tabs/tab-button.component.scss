@@ -2,12 +2,12 @@
 @use 'libs/components/theme/src/lib/styles/compat-tokens-mixins' as compatMixins;
 
 @include compatMixins.sky-default-overrides('sky-tab-button') {
-  --sky-override-closeable-tab-padding-right: 43px;
-  --sky-override-tab-close-active-hover-color: #fff;
-  --sky-override-tab-close-padding: 1px 6px;
+  --sky-override-closeable-tab-padding-right: calc(#{$sky-padding-double} + #{$sky-padding-half});
+  --sky-override-tab-close-active-hover-color: #{$sky-color-white};
+  --sky-override-tab-close-padding: var(--sky-border-width-input-base) #{$sky-padding-half};
   --sky-override-tab-close-position: absolute;
-  --sky-override-tab-close-position-right: 10px;
-  --sky-override-tab-close-position-top: 10px;
+  --sky-override-tab-close-position-right: #{$sky-padding};
+  --sky-override-tab-close-position-top: #{$sky-padding};
   --sky-override-tab-margin-right: #{$sky-margin-inline-compact};
   --sky-override-tab-btn-wizard-disabled-background-color: var(
     --sky-background-color-neutral-light

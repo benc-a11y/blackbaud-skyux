@@ -38,7 +38,7 @@
     $sky-text-color-default,
     $alpha: 0.8
   );
-  --sky-override-label-margin: 0 3px;
+  --sky-override-label-margin: 0 var(--sky-space-3xs);
   --sky-override-label-padding: 0.3em 0.6em 0.3em 0.6em;
   --sky-override-label-text-padding-left: var(--sky-padding-half);
 }

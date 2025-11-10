@@ -1,7 +1,8 @@
 @use 'libs/components/theme/src/lib/styles/compat-tokens-mixins' as compatMixins;
+@use 'libs/components/theme/src/lib/styles/variables' as *;
 
 @include compatMixins.sky-default-overrides('input') {
-  --sky-override-ag-grid-text-editor-left-padding: 9px;
+  --sky-override-ag-grid-text-editor-left-padding: #{$sky-padding-half};
 }
 
 :host {

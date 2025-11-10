@@ -4,23 +4,23 @@
 
 @include compatMixins.sky-default-overrides('.sky-card') {
   --sky-override-card-background-color-selected: #{$sky-background-color-selected};
-  --sky-override-card-background-color: #fff;
+  --sky-override-card-background-color: #{$sky-color-white};
   --sky-override-card-border-radius: 0;
-  --sky-override-card-border: 1px solid #{$sky-border-color-neutral-medium};
-  --sky-override-card-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
-  --sky-override-card-checkbox-margin-right: 5px;
+  --sky-override-card-border: var(--sky-border-width-input-base) solid #{$sky-border-color-neutral-medium};
+  --sky-override-card-box-shadow: var(--sky-elevation-overlay-100);
+  --sky-override-card-checkbox-margin-right: #{$sky-margin-half};
   --sky-override-card-content-padding: #{$sky-padding};
   --sky-override-card-header-checkbox-padding-right: #{$sky-padding};
-  --sky-override-card-header-font-size: 26px;
+  --sky-override-card-header-font-size: #{$sky-font-size-h2};
   --sky-override-card-header-font-weight: 300;
   --sky-override-card-header-line-height: #{$sky-line-height-base};
   --sky-override-card-header-padding: #{$sky-padding 0 0 0};
   --sky-override-card-header-text-padding: #{0 $sky-padding};
-  --sky-override-card-large-height: 350px;
-  --sky-override-card-large-width: 350px;
+  --sky-override-card-large-height: #{$sky-card-width-large};
+  --sky-override-card-large-width: #{$sky-card-width-large};
   --sky-override-card-margin: #{0 $sky-margin $sky-margin 0};
-  --sky-override-card-small-height: 250px;
-  --sky-override-card-small-width: 225px;
+  --sky-override-card-small-height: #{$sky-card-width-small};
+  --sky-override-card-small-width: #{$sky-card-width-small - $sky-padding-half};
 }
 
 .sky-card {
@@ -46,7 +46,7 @@
 
   display: inline-flex;
   flex-direction: column;
-  height: var(--sky-override-card-large-height, 360px);
+  height: var(--sky-override-card-large-height, var(--sky-comp-card-large-size-height));
   margin: var(
     --sky-override-card-margin,
     var(--sky-comp-card-space-offset-top)
@@ -60,13 +60,13 @@
   // vertically aligned with one another.  Otherwise because of the inline nature of the card the browser
   // will attempt to vertically align the cards based on the baselines of the text in each card.
   vertical-align: top;
-  width: var(--sky-override-card-large-width, 360px);
+  width: var(--sky-override-card-large-width, var(--sky-comp-card-large-size-width));
   position: relative;
 }
 
 .sky-card-small {
-  height: var(--sky-override-card-small-height, 256px);
-  width: var(--sky-override-card-small-width, 240px);
+  height: var(--sky-override-card-small-height, var(--sky-comp-card-small-size-height));
+  width: var(--sky-override-card-small-width, var(--sky-comp-card-small-size-width));
 
   .sky-card-header {
     padding: var(

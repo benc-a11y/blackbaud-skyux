@@ -1,8 +1,8 @@
 @use 'libs/components/theme/src/lib/styles/variables' as variables;
 
-$sky-standard-border: 1px solid var(--sky-border-color-neutral-medium);
+$sky-standard-border: var(--sky-border-width-input-base) solid var(--sky-border-color-neutral-medium);
 
-$sky-cell-wrap-text-padding-default: 7px;
+$sky-cell-wrap-text-padding-default: variables.$sky-padding-half;
 $sky-cell-wrap-text-line-height-default: variables.$sky-line-height-base;
 
 @mixin skyux-cell-wrap-text($padding, $line-height) {
@@ -10,6 +10,6 @@ $sky-cell-wrap-text-line-height-default: variables.$sky-line-height-base;
     line-height: #{$line-height};
     padding-top: $padding;
     padding-bottom: $padding;
-    min-height: calc(var(--ag-row-height) - 2px);
+    min-height: calc(var(--ag-row-height) - var(--sky-border-width-input-focus));
   }
 }

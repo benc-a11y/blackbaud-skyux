@@ -5,11 +5,11 @@
 @include compatMixins.sky-default-overrides(
   '.sky-ag-grid-cell-editor-datepicker'
 ) {
-  --sky-override-ag-grid-datepicker-editor-border-width: 1px;
+  --sky-override-ag-grid-datepicker-editor-border-width: var(--sky-border-width-input-base);
   --sky-override-ag-grid-datepicker-editor-border-color: #{transparent
     defaultVars.$sky-border-color-neutral-medium transparent transparent};
   --sky-override-ag-grid-datepicker-editor-position: relative;
-  --sky-override-ag-grid-datepicker-editor-top-left: 1px;
+  --sky-override-ag-grid-datepicker-editor-top-left: var(--sky-border-width-input-base);
 }
 
 .sky-ag-grid-cell-editor-datepicker {

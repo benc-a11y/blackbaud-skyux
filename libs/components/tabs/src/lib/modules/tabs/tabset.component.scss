@@ -3,12 +3,12 @@
 
 @include compatMixins.sky-default-overrides('sky-tabset') {
   --sky-override-tabset-align-items: center;
-  --sky-override-tabset-border-bottom: #{2px solid
+  --sky-override-tabset-border-bottom: #{var(--sky-border-width-input-focus) solid
     $sky-background-color-primary-dark};
   --sky-override-tabset-button-color: #{$sky-text-color-action-primary};
   --sky-override-tabset-button-group-padding-left: #{$sky-padding};
-  --sky-override-tabset-button-margin-right: 5px;
-  --sky-override-tabset-icon-button-padding: 6px 12px;
+  --sky-override-tabset-button-margin-right: #{$sky-margin-half};
+  --sky-override-tabset-icon-button-padding: #{$sky-padding-half} #{$sky-padding};
   --sky-override-tabset-modal-margin: #{0 (-$sky-space-lg) $sky-space-xl};
   --sky-override-tabset-modal-padding-left: #{$sky-space-lg};
   --sky-override-tabset-modal-padding-none: 0;
@@ -155,7 +155,7 @@ sky-tabset {
 .sky-tab-dropdown-menu-item {
   sky-tab-button {
     display: flex;
-    min-width: 300px;
+    min-width: var(--sky-size-dropdown-min-width);
   }
 
   .sky-dropdown-item {
