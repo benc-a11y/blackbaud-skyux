@@ -4,9 +4,9 @@
 
 @include compatMixins.sky-default-overrides('.sky-inline-form') {
   --sky-override-inline-form-background-color: #{$sky-background-color-neutral-light};
-  --sky-override-inline-form-border: 1px solid
+  --sky-override-inline-form-border: var(--sky-border-width-input-base) solid
     #{$sky-border-color-neutral-medium};
-  --sky-override-inline-form-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+  --sky-override-inline-form-box-shadow: var(--sky-elevation-overlay-100);
   --sky-override-inline-form-button-margin-right: #{$sky-margin-stacked-compact};
   --sky-override-inline-form-padding: #{$sky-padding-even-default};
   --sky-override-inline-form-footer-margin-top: #{$sky-margin-stacked-separate};
