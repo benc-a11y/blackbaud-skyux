@@ -1,8 +1,9 @@
 @use 'libs/components/theme/src/lib/styles/mixins' as mixins;
 @use 'libs/components/theme/src/lib/styles/compat-tokens-mixins' as compatMixins;
+@use 'libs/components/theme/src/lib/styles/variables' as *;
 
 @include compatMixins.sky-default-host-overrides() {
-  --sky-override-page-header-avatar-space-above: 5px;
+  --sky-override-page-header-avatar-space-above: #{$sky-margin-half};
   --sky-override-page-header-avatar-space-right-sm: var(--sky-margin-inline-lg);
   --sky-override-page-header-avatar-space-right-xs: var(--sky-margin-inline-sm);
 }
