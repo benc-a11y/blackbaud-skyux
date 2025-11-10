@@ -3,11 +3,11 @@
 @use 'libs/components/theme/src/lib/styles/compat-tokens-mixins' as compatMixins;
 
 @include compatMixins.sky-default-overrides('.sky-modal-footer-container') {
-  --sky-override-modal-footer-border-top: #{1px solid
+  --sky-override-modal-footer-border-top: #{var(--sky-border-width-input-base) solid
     $sky-border-color-neutral-light};
-  --sky-override-modal-footer-btn-btn-link-margin: -2px;
-  --sky-override-modal-footer-btn-btn-margin: 10px;
-  --sky-override-modal-footer-padding: 15px;
+  --sky-override-modal-footer-btn-btn-link-margin: calc(var(--sky-border-width-input-focus) * -1);
+  --sky-override-modal-footer-btn-btn-margin: #{$sky-padding};
+  --sky-override-modal-footer-padding: #{$sky-padding};
 }
 
 sky-modal-footer {

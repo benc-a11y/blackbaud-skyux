@@ -2,18 +2,18 @@
 @use 'libs/components/theme/src/lib/styles/compat-tokens-mixins' as compatMixins;
 
 @include compatMixins.sky-default-overrides('.sky-flyout') {
-  --sky-override-flyout-background: #fff;
-  --sky-override-flyout-border-left: 6px solid
+  --sky-override-flyout-background: #{$sky-color-white};
+  --sky-override-flyout-border-left: #{$sky-padding-half} solid
     #{$sky-background-color-primary-dark};
   --sky-override-flyout-header-background: #{$sky-background-color-neutral-light};
-  --sky-override-flyout-header-border-bottom: 1px solid
+  --sky-override-flyout-header-border-bottom: var(--sky-border-width-input-base) solid
     #{$sky-border-color-neutral-medium};
   --sky-override-flyout-header-button-margin-right: #{$sky-margin-inline-default};
-  --sky-override-flyout-header-height: 50px;
+  --sky-override-flyout-header-height: #{$sky-flyout-header-height};
   --sky-override-flyout-header-padding: #{$sky-padding-squish-large};
   --sky-override-flyout-header-position: fixed;
-  --sky-flyout-resize-handle-offset: -10px;
-  --sky-flyout-resize-handle-width: 14px;
+  --sky-flyout-resize-handle-offset: calc(#{$sky-padding} * -1);
+  --sky-flyout-resize-handle-width: #{$sky-padding-plus-half};
 }
 
 .sky-flyout {
@@ -61,7 +61,7 @@
     padding: 0;
     opacity: 0;
     position: absolute;
-    margin: -1px;
+    margin: calc(var(--sky-border-width-input-base) * -1);
     border: 0;
     overflow: hidden;
     clip: rect(0 0 0 0);
@@ -103,7 +103,7 @@
     -moz-appearance: none;
     width: 0;
     height: 0;
-    border-radius: 0px;
+    border-radius: 0;
     border: 0 none;
     background: none;
     display: none;
@@ -115,7 +115,7 @@
     -moz-appearance: none;
     width: 0;
     height: 0;
-    border-radius: 0px;
+    border-radius: 0;
     border: 0 none;
     background: none;
     display: none;
@@ -126,7 +126,7 @@
     -moz-appearance: none;
     width: 0;
     height: 0;
-    border-radius: 0px;
+    border-radius: 0;
     border: 0 none;
     background: none;
     display: none;
@@ -171,10 +171,10 @@
 }
 
 .sky-flyout-help-shim {
-  padding-right: 8px;
+  padding-right: var(--sky-space-inset-m);
 
   @media (min-width: $sky-screen-sm-min) {
-    padding-right: 50px;
+    padding-right: $sky-flyout-header-height;
   }
 }
 
@@ -183,7 +183,7 @@
   // This margin-top rule can be removed when default support is dropped;
   margin-top: var(--sky-override-flyout-header-height, 0);
   // This height rule can be a straight 100% when default support is dropped;
-  height: calc(100% - var(--sky-override-flyout-header-height, 0px));
+  height: calc(100% - var(--sky-override-flyout-header-height, 0));
 }
 
 .sky-flyout-header-grab-handle {

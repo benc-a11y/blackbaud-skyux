@@ -3,26 +3,26 @@
 @use 'libs/components/theme/src/lib/styles/compat-tokens-mixins' as compatMixins;
 
 @include compatMixins.sky-default-overrides('.sky-modal') {
-  --sky-override-modal-background-color: #fff;
-  --sky-override-modal-border: 1px solid #{$sky-border-color-neutral-medium};
+  --sky-override-modal-background-color: #{$sky-color-white};
+  --sky-override-modal-border: var(--sky-border-width-input-base) solid #{$sky-border-color-neutral-medium};
   --sky-override-modal-dock-bottom: #{-$sky-padding-plus-half};
   --sky-override-modal-dock-margin-left-right-bottom: #{-$sky-margin-plus-half};
   --sky-override-modal-dock-padding-top: #{$sky-padding-plus-half};
-  --sky-override-modal-dock-width: calc(100% + 30px);
+  --sky-override-modal-dock-width: calc(100% + #{$sky-padding-double});
   --sky-override-modal-full-page-margin-xs: 0;
   --sky-override-modal-full-page-margin: 0;
   --sky-override-modal-full-page-width: 100%;
-  --sky-override-modal-header-bottom-border: #{1px solid
+  --sky-override-modal-header-bottom-border: #{var(--sky-border-width-input-base) solid
     $sky-border-color-neutral-light};
-  --sky-override-modal-header-padding: #{9px 3px 9px $sky-padding-plus-half};
+  --sky-override-modal-header-padding: #{$sky-padding-half var(--sky-space-3xs) $sky-padding-half $sky-padding-plus-half};
   --sky-override-modal-help-close-display: inline-block;
-  --sky-override-modal-margin: 20px auto;
+  --sky-override-modal-margin: #{$sky-padding-double} auto;
   --sky-override-modal-viewkept-toolbar-box-shadow: none;
-  --sky-override-modal-viewkept-toolbar-padding-horizontal: 10px;
-  --sky-override-modal-width-l: 900px;
-  --sky-override-modal-width-m: 600px;
-  --sky-override-modal-width-s: 300px;
-  --sky-override-modal-xs-margin: 30px #{$sky-margin} #{$sky-margin}
+  --sky-override-modal-viewkept-toolbar-padding-horizontal: #{$sky-padding};
+  --sky-override-modal-width-l: #{$sky-modal-width-large};
+  --sky-override-modal-width-m: #{$sky-modal-width-medium};
+  --sky-override-modal-width-s: #{$sky-modal-width-small};
+  --sky-override-modal-xs-margin: #{$sky-padding-double} #{$sky-margin} #{$sky-margin}
     #{$sky-margin};
 }
 
@@ -64,7 +64,7 @@
 .sky-modal:focus {
   outline-style: dotted;
   outline-width: thin;
-  outline-offset: -1px;
+  outline-offset: calc(var(--sky-border-width-input-base) * -1);
 }
 
 .sky-modal-header:has(.sky-modal-header-content:empty) {
@@ -163,7 +163,7 @@
   }
 }
 
-@media (min-width: 920px) {
+@media (min-width: $sky-modal-breakpoint-large) {
   .sky-modal-large {
     width: var(--sky-override-modal-width-l, var(--sky-size-width-modal-l));
 
@@ -191,7 +191,7 @@
   &:focus {
     outline-style: dotted;
     outline-width: thin;
-    outline-offset: -1px;
+    outline-offset: calc(var(--sky-border-width-input-base) * -1);
   }
 
   &.sky-layout-host-fit {
