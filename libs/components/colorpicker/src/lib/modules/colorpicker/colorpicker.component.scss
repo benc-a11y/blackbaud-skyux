@@ -220,21 +220,21 @@ sky-colorpicker.sky-form-field-stacked {
 
 // only applies to default theme
 .sky-colorpicker-reset-button {
-  background-color: $sky-color-white;
-  margin-left: $sky-margin-half;
+  background-color: var(--sky-color-white);
+  margin-left: var(--sky-margin-half);
   @include mixins.sky-border(light, top, right, bottom, left);
   box-shadow:
-    inset 0 0 0 2px $sky-color-white,
-    inset 0 0 0 3px $sky-border-color-neutral-medium;
+    inset 0 0 0 2px var(--sky-color-white),
+    inset 0 0 0 3px var(--sky-border-color-neutral-medium);
   width: 30px;
   height: 30px;
   cursor: pointer;
-  color: $sky-text-color-deemphasized;
+  color: var(--sky-text-color-deemphasized);
   &:hover {
-    color: darken($sky-text-color-deemphasized, 20%);
+    color: var(--sky-text-color-deemphasized);
   }
   &.sky-colorpicker-reset-button-disabled {
-    color: $sky-text-color-deemphasized;
+    color: var(--sky-text-color-deemphasized);
     cursor: default;
   }
 }
@@ -479,7 +479,7 @@ sky-colorpicker.sky-form-field-stacked {
       --sky-override-colorpicker-selector-size,
       calc(var(--sky-font-size-body-m) + 1px)
     );
-    border: $sky-color-white solid 2px;
+    border: var(--sky-color-white) solid 2px;
     outline: thin solid;
   }
 
