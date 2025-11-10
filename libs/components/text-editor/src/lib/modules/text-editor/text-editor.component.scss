@@ -3,8 +3,8 @@
 @use 'libs/components/theme/src/lib/styles/compat-tokens-mixins' as compatMixins;
 
 @include compatMixins.sky-default-overrides('.sky-text-editor') {
-  --sky-override-text-editor-background-color: white;
-  --sky-override-text-editor-toolbar-background-color: white;
+  --sky-override-text-editor-background-color: #{$sky-color-white};
+  --sky-override-text-editor-toolbar-background-color: #{$sky-color-white};
   --sky-override-text-editor-label-background-color: transparent;
   --sky-override-text-editor-border-error: 1px solid
     var(--sky-highlight-color-danger);
