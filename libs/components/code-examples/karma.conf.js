@@ -14,10 +14,10 @@ module.exports = function (config) {
       // TODO: remove these threshold overrides to meet 100% coverage!
       check: {
         global: {
-          statements: 0,
-          branches: 0,
-          functions: 0,
-          lines: 0,
+          statements: 25,
+          branches: 25,
+          functions: 25,
+          lines: 25,
         },
       },
     },
