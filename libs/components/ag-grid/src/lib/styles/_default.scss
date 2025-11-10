@@ -28,17 +28,17 @@
     }
 
     .ag-select-list {
-      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+      box-shadow: var(--sky-elevation-overlay-100);
 
       .ag-select-list-item {
         cursor: pointer;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        height: 30px;
+        padding-top: var(--sky-space-2xs);
+        padding-bottom: var(--sky-space-2xs);
+        height: var(--sky-space-xl);
 
         &:last-of-type {
-          padding-bottom: 10px;
-          height: 35px;
+          padding-bottom: var(--sky-space-xs);
+          height: calc(var(--sky-space-xl) + var(--sky-space-2xs));
         }
 
         &:focus-visible,
@@ -67,8 +67,8 @@
   .sky-ag-grid-cell-editable {
     .ag-select {
       .ag-picker-field-display {
-        margin-top: 2px;
-        margin-left: 9px;
+        margin-top: var(--sky-space-3xs);
+        margin-left: var(--sky-space-inset-s);
       }
     }
   }
@@ -88,12 +88,12 @@
 
     .ag-cell.ag-cell-focus {
       z-index: 1;
-      outline-offset: -2px;
+      outline-offset: calc(var(--sky-border-width-input-focus) * -1);
       outline: var(
           --sky-color-border-input-focus,
           var(--ag-range-selection-border-color)
         )
-        solid var(--sky-border-width-input-focus, 2px);
+        solid var(--sky-border-width-input-focus);
     }
   }
 

@@ -15,7 +15,7 @@
       --sky-comp-override-ag-grid-cell-padding-vertical-compact,
       var(--sky-comp-grid-cell-space-inset-bottom)
     );
-    min-height: calc(var(--ag-row-height) - 2px);
+    min-height: calc(var(--ag-row-height) - var(--sky-border-width-input-focus));
   }
 
   .ag-header .ag-header-cell .ag-header-cell-label-sortable {
@@ -41,8 +41,8 @@
     ) {
       .ag-header-cell-resize::after {
         // these styles make the resize handle a dotted line since it is not technically a border
-        mask-size: 1px 2px;
-        -webkit-mask-size: 1px 2px;
+        mask-size: var(--sky-border-width-input-base) var(--sky-border-width-input-focus);
+        -webkit-mask-size: var(--sky-border-width-input-base) var(--sky-border-width-input-focus);
         mask-image: linear-gradient(
           to bottom,
           rgba(0, 0, 0, 1) 0%,
@@ -70,7 +70,7 @@
       --sky-color-border-column_divider
     );
     --ag-header-column-resize-handle-height: 100%;
-    --ag-header-column-resize-handle-width: 3px;
+    --ag-header-column-resize-handle-width: var(--sky-border-width-selected-m);
   }
 
   .ag-header-cell.sky-ag-grid-header-resizable.ag-column-resizing
@@ -83,7 +83,7 @@
     > .ag-header-cell-resize:hover {
     &::after {
       position: relative;
-      left: 2px;
+      left: var(--sky-border-width-input-focus);
       top: 0;
       height: 100%;
     }
@@ -103,7 +103,7 @@
     ) {
       .ag-header-cell.ag-floating-filter:nth-child(#{$i}),
       .ag-cell:nth-child(#{$i}) {
-        border-right: 1px solid var(--sky-color-border-column_divider);
+        border-right: var(--sky-border-width-input-base) solid var(--sky-color-border-column_divider);
         padding-right: calc(
           var(--ag-cell-horizontal-padding) - var(
               --sky-override-ag-grid-border-width,
@@ -121,8 +121,8 @@
     ) {
       .ag-header-cell.ag-floating-filter:nth-child(#{$i}),
       .ag-cell:nth-child(#{$i}) {
-        border-right: 3px solid var(--sky-color-border-column_divider);
-        padding-right: calc(var(--ag-cell-horizontal-padding) - 3px);
+        border-right: var(--sky-border-width-selected-m) solid var(--sky-color-border-column_divider);
+        padding-right: calc(var(--ag-cell-horizontal-padding) - var(--sky-border-width-selected-m));
       }
     }
   }
