@@ -3,13 +3,13 @@
 @use 'libs/components/theme/src/lib/styles/variables' as *;
 
 @include compatMixins.sky-default-overrides('.sky-expansion-indicator') {
-  --sky-override-expansion-indicator-container-left: 4px;
+  --sky-override-expansion-indicator-container-left: var(--sky-space-2xs);
   --sky-override-expansion-indicator-container-top: 3.5px;
-  --sky-override-expansion-indicator-leg-left-left: 4px;
+  --sky-override-expansion-indicator-leg-left-left: var(--sky-space-2xs);
   --sky-override-expansion-indicator-leg-right-left: 10.5px;
   --sky-override-expansion-indicator-line-height: normal;
-  --sky-override-expansion-indicator-size: 26px;
-  --sky-override-expansion-indicator-size-half: 13px;
+  --sky-override-expansion-indicator-size: #{$sky-icon-size-md};
+  --sky-override-expansion-indicator-size-half: calc(#{$sky-icon-size-md} / 2);
   --sky-override-expansion-indicator-color: var(
     --sky-expansion-indicator-color,
     #{$sky-text-color-deemphasized}
@@ -42,9 +42,9 @@
     )
   );
   border: none;
-  border-radius: 1px;
+  border-radius: var(--sky-border-width-input-base);
   display: inline-block;
-  height: 2px;
+  height: var(--sky-border-width-input-focus);
   position: absolute;
   top: var(
     --sky-override-expansion-indicator-size-half,
@@ -54,7 +54,7 @@
     transform $sky-transition-time-medium,
     left $sky-transition-time-medium;
   vertical-align: top;
-  width: 11px;
+  width: calc(#{$sky-padding} + var(--sky-border-width-input-base));
 }
 
 .sky-expansion-indicator-glyph-container {
