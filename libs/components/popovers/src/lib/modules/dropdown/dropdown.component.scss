@@ -5,27 +5,27 @@
 @include compatMixins.sky-default-overrides('.sky-dropdown') {
   --sky-override-caret-margin-left: #{$sky-margin};
   --sky-override-context-menu-border-radius: 50%;
-  --sky-override-context-menu-font-size: 15px;
+  --sky-override-context-menu-font-size: #{$sky-font-size-base};
   --sky-override-context-menu-line-height: 1.428571429;
-  --sky-override-context-menu-padding: 3px;
-  --sky-override-context-menu-height-width: 30px;
+  --sky-override-context-menu-padding: var(--sky-space-3xs);
+  --sky-override-context-menu-height-width: #{$sky-padding-double};
 }
 
 @include compatMixins.sky-default-overrides('.sky-dropdown-button-type-tab') {
   --sky-override-tab-border-bottom: none;
-  --sky-override-tab-button-radius: 4px;
+  --sky-override-tab-button-radius: var(--sky-space-2xs);
   --sky-override-tab-dropdown-color: var(--sky-text-color-on-dark);
-  --sky-override-tab-font-size: 15px;
+  --sky-override-tab-font-size: #{$sky-font-size-base};
   --sky-override-tab-font-weight: 600;
   --sky-override-tab-line-height: 1.8;
   --sky-override-tab-outline-active: auto;
   --sky-override-tab-outline-focus: auto;
   --sky-override-tab-outline-color-active: black;
   --sky-override-tab-outline-color-focus: black;
-  --sky-override-tab-padding: 8px 16px;
-  --sky-override-tab-padding-active: 8px 16px;
-  --sky-override-tab-padding-focus: 8px 16px;
-  --sky-override-tab-padding-hover: 8px 16px;
+  --sky-override-tab-padding: #{$sky-padding-half $sky-padding-double};
+  --sky-override-tab-padding-active: #{$sky-padding-half $sky-padding-double};
+  --sky-override-tab-padding-focus: #{$sky-padding-half $sky-padding-double};
+  --sky-override-tab-padding-hover: #{$sky-padding-half $sky-padding-double};
   --sky-override-tab-selected-background-color: var(
     --sky-background-color-primary-dark
   );

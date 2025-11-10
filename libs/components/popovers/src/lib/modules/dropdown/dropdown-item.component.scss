@@ -4,7 +4,7 @@
 
 @include compatMixins.sky-default-overrides('.sky-dropdown-item') {
   --sky-override-dropdown-item-active-class-background: #{$sky-background-color-neutral-light};
-  --sky-override-dropdown-item-border-radius: 0px;
+  --sky-override-dropdown-item-border-radius: 0;
   --sky-override-dropdown-item-box-shadow: none;
   --sky-override-dropdown-item-box-shadow-focus: none;
   --sky-override-dropdown-item-color-background: transparent;
@@ -14,12 +14,12 @@
     --sky-text-color-deemphasized
   );
   --sky-override-dropdown-item-disabled-box-shadow: none;
-  --sky-override-dropdown-item-disabled-font-size: 15px;
+  --sky-override-dropdown-item-disabled-font-size: #{$sky-font-size-base};
   --sky-override-dropdown-item-disabled-font-style: italic;
   --sky-override-dropdown-item-focus-visible-background: #{$sky-background-color-neutral-light};
   --sky-override-dropdown-item-hover-background: #{$sky-background-color-neutral-light};
-  --sky-override-dropdown-item-margin: 4px;
-  --sky-override-dropdown-item-padding: 3px #{$sky-padding-double};
+  --sky-override-dropdown-item-margin: var(--sky-space-2xs);
+  --sky-override-dropdown-item-padding: var(--sky-space-3xs) #{$sky-padding-double};
 }
 
 .sky-dropdown-item {
@@ -30,7 +30,7 @@
   border: none;
   display: block;
   margin: var(--sky-override-dropdown-item-margin, 0);
-  min-width: 160px;
+  min-width: var(--sky-size-dropdown-min-width);
   text-align: left;
   transition: box-shadow $sky-transition-time-short;
 
