@@ -21,16 +21,16 @@
   --sky-override-angular-tree-node-wrapper-border-left: #{$sky-nav-selected-border-width}
     solid transparent;
   --sky-override-angular-tree-node-wrapper-border-radius: 0;
-  --sky-override-angular-tree-node-wrapper-padding: 4px #{$sky-margin-half};
-  --sky-override-tree-children-padding: 30px;
+  --sky-override-angular-tree-node-wrapper-padding: var(--sky-space-2xs) #{$sky-margin-half};
+  --sky-override-tree-children-padding: #{$sky-padding-double};
   --sky-override-angular-tree-node-wrapper-standard-box-shadow-active: none;
   --sky-override-angular-tree-node-wrapper-standard-box-shadow-base: none;
   --sky-override-angular-tree-node-wrapper-standard-box-shadow-focus: none;
   --sky-override-angular-tree-node-wrapper-standard-box-shadow-hover: none;
   --sky-override-angular-tree-node-wrapper-standard-outline-active: auto;
   --sky-override-angular-tree-node-wrapper-standard-outline-focus: auto;
-  --sky-override-angular-tree-switch-control-margin: 0 8px 0 0;
-  --sky-override-angular-tree-toggle-children-height: 20px;
+  --sky-override-angular-tree-switch-control-margin: 0 var(--sky-space-inset-m) 0 0;
+  --sky-override-angular-tree-toggle-children-height: #{$sky-padding-double};
   --sky-override-angular-tree-toggle-children-margin: 0 #{$sky-margin} 0 0;
   --sky-override-angular-tree-toggle-children-padding: 0;
   --sky-override-angular-tree-toggle-children-placeholder-height: 19px;
