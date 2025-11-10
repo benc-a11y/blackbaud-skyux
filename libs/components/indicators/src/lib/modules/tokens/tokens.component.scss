@@ -17,7 +17,7 @@ $sky-tokens-gutter-size: var(--sky-border-width-input-focus);
 
   .sky-tokens-content {
     flex-grow: 1;
-    flex-basis: 0px;
+    flex-basis: 0;
 
     > div {
       display: contents;

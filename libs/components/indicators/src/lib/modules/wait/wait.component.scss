@@ -3,10 +3,10 @@
 
 @include compatMixins.sky-default-overrides('.sky-wait-container') {
   --sky-override-wait-mask-color: rgba(255, 255, 255, 0.7);
-  --sky-override-wait-height: 50px;
-  --sky-override-wait-width: 50px;
-  --sky-override-wait-margin-top: -25px;
-  --sky-override-wait-margin-left: -25px;
+  --sky-override-wait-height: #{$sky-wait-spinner-size};
+  --sky-override-wait-width: #{$sky-wait-spinner-size};
+  --sky-override-wait-margin-top: calc(#{$sky-wait-spinner-size} / -2);
+  --sky-override-wait-margin-left: calc(#{$sky-wait-spinner-size} / -2);
   --sky-override-wait-double-bounce-border-radius: 50%;
   --sky-override-wait-double-bounce-opacity: 0.6;
   --sky-override-wait-double-bounce-background-color: #{$sky-highlight-color-success};
