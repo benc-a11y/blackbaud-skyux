@@ -1,16 +1,42 @@
+@use 'libs/components/theme/src/lib/styles/compat-tokens-mixins' as compatMixins;
+@use 'libs/components/theme/src/lib/styles/variables' as *;
+
+@include compatMixins.sky-default-overrides(
+  '.sky-text-editor-dropdown-item-divider'
+) {
+  --sky-override-text-editor-dropdown-item-divider-border: 1px solid
+    rgba(0, 0, 0, 0.1);
+  --sky-override-text-editor-dropdown-item-divider-margin: 9px 1px;
+}
+
+@include compatMixins.sky-default-overrides(
+  '.sky-text-editor-menu-key-shortcut'
+) {
+  --sky-override-text-editor-menu-key-shortcut-margin-left: 15px;
+}
+
 .sky-text-editor-dropdown-item-divider {
   border: 0;
   padding: 0;
   height: 1px;
-  margin: 9px 1px;
+  margin: var(
+    --sky-override-text-editor-dropdown-item-divider-margin,
+    var(--sky-space-gap-stacked_supplemental-m) var(--sky-space-gap-inline-xs)
+  );
   overflow: hidden;
   background: transparent;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: var(
+    --sky-override-text-editor-dropdown-item-divider-border,
+    var(--sky-border-width-divider) solid var(--sky-color-border-divider)
+  );
   cursor: default;
   filter: none;
 }
 
 .sky-text-editor-menu-key-shortcut {
   float: right;
-  margin-left: 15px;
+  margin-left: var(
+    --sky-override-text-editor-menu-key-shortcut-margin-left,
+    var(--sky-space-gap-inline-l)
+  );
 }

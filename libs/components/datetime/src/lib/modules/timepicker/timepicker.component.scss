@@ -3,9 +3,9 @@
 @use 'libs/components/theme/src/lib/styles/compat-tokens-mixins' as compatMixins;
 
 @include compatMixins.sky-default-overrides('.sky-timepicker-container') {
-  --sky-override-timepicker-background-color: #{$sky-color-gray-05};
+  --sky-override-timepicker-background-color: #{$sky-background-color-neutral-light};
   --sky-override-timepicker-border-radius: 5px;
-  --sky-override-timepicker-button-active-background-color: #{$sky-color-gray-10};
+  --sky-override-timepicker-button-active-background-color: #{$sky-background-color-neutral-medium};
   --sky-override-timepicker-button-background-color: #{$sky-color-white};
   --sky-override-timepicker-button-border-radius: 3px;
   --sky-override-timepicker-button-focus-box-shadow: none;
@@ -15,7 +15,7 @@
   --sky-override-timepicker-button-height: 100%;
   --sky-override-timepicker-button-hover-active-focus-border-radius: 0;
   --sky-override-timepicker-button-hover-active-box-shadow: none;
-  --sky-override-timepicker-button-hover-background-color: #{$sky-color-gray-05};
+  --sky-override-timepicker-button-hover-background-color: #{$sky-background-color-neutral-light};
   --sky-override-timepicker-button-padding-horizontal: #{$sky-padding-plus-half};
   --sky-override-timepicker-button-padding-vertical: #{$sky-padding-half};
   --sky-override-timepicker-button-selected-background-color: #{$sky-background-color-info-light};
@@ -32,7 +32,7 @@
   --sky-override-timepicker-font-size: #{$sky-font-size-base};
   --sky-override-timepicker-footer-padding-horizontal: #{$sky-padding};
   --sky-override-timepicker-footer-padding-vertical: #{$sky-padding};
-  --sky-override-timepicker-text-color: #000;
+  --sky-override-timepicker-text-color: #{$sky-text-color-default};
 }
 
 .sky-timepicker-container {
