@@ -4,7 +4,7 @@
 @include compatMixins.sky-default-overrides(
   '.sky-split-view-workspace-header'
 ) {
-  --sky-override-split-view-header-border-bottom: 1px solid
+  --sky-override-split-view-header-border-bottom: var(--sky-border-width-input-base) solid
     #{$sky-border-color-neutral-medium};
   --sky-override-split-view-header-padding: #{$sky-padding-half} 0;
 }

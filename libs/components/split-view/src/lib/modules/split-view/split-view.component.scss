@@ -3,11 +3,11 @@
 @use 'libs/components/theme/src/lib/styles/compat-tokens-mixins' as compatMixins;
 
 @include compatMixins.sky-default-overrides('.sky-split-view') {
-  --sky-override-split-view-border: 1px solid
+  --sky-override-split-view-border: var(--sky-border-width-input-base) solid
     #{$sky-border-color-neutral-medium};
-  --sky-override-split-view-border-left: 1px solid
+  --sky-override-split-view-border-left: var(--sky-border-width-input-base) solid
     #{$sky-border-color-neutral-medium};
-  --sky-override-split-view-border-right: 1px solid
+  --sky-override-split-view-border-right: var(--sky-border-width-input-base) solid
     #{$sky-border-color-neutral-medium};
 }
 

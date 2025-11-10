@@ -6,8 +6,8 @@
   --sky-override-tile-content-section-border-color: #{$sky-border-color-neutral-light};
   --sky-override-tile-content-section-border-style: solid;
   --sky-override-tile-content-section-first-margin-top: 0;
-  --sky-override-tile-content-section-padding: 15px;
-  --sky-override-tile-content-section-padding-last: 15px;
+  --sky-override-tile-content-section-padding: #{$sky-padding};
+  --sky-override-tile-content-section-padding-last: #{$sky-padding};
 }
 
 .sky-tile-content-section {

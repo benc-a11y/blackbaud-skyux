@@ -3,12 +3,12 @@
 @use 'libs/components/theme/src/lib/styles/compat-tokens-mixins' as compatMixins;
 
 @include compatMixins.sky-default-overrides('.sky-split-view-drawer') {
-  --sky-override-split-view-drawer-background-color: #ffffff;
-  --sky-override-split-view-drawer-border-right: 1px solid
+  --sky-override-split-view-drawer-background-color: #{$sky-color-white};
+  --sky-override-split-view-drawer-border-right: var(--sky-border-width-input-base) solid
     #{$sky-border-color-neutral-medium};
   --sky-override-split-view-resize-handle-border-focus: none;
   --sky-override-split-view-resize-handle-outline-focus: auto;
-  --sky-override-split-view-resize-handle-width: 14px;
+  --sky-override-split-view-resize-handle-width: #{$sky-padding-plus-half};
 }
 
 .sky-split-view-drawer {
@@ -98,7 +98,7 @@
     -moz-appearance: none;
     width: 0;
     height: 0;
-    border-radius: 0px;
+    border-radius: 0;
     border: 0 none;
     background: none;
     display: none;
@@ -110,7 +110,7 @@
     -moz-appearance: none;
     width: 0;
     height: 0;
-    border-radius: 0px;
+    border-radius: 0;
     border: 0 none;
     background: none;
     display: none;
@@ -121,7 +121,7 @@
     -moz-appearance: none;
     width: 0;
     height: 0;
-    border-radius: 0px;
+    border-radius: 0;
     border: 0 none;
     background: none;
     display: none;

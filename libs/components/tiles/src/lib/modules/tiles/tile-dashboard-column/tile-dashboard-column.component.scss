@@ -58,6 +58,6 @@
 .sky-tile-dashboard-column {
   // Ensure at least a 100 pixel drop target in case the column has no tiles and no
   // other column is tall enough to give it a reasonable drop target.
-  min-height: 100px;
+  min-height: var(--sky-size-min-height-drop-target);
   width: 100%;
 }
