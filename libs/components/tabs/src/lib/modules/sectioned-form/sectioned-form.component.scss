@@ -3,11 +3,11 @@
 @use 'libs/components/theme/src/lib/styles/compat-tokens-mixins' as compatMixins;
 
 @include compatMixins.sky-default-overrides('.sky-sectioned-form') {
-  --sky-override-sectioned-form-content-border-left: 1px solid
+  --sky-override-sectioned-form-content-border-left: var(--sky-border-width-input-base) solid
     var(--sky-border-color-neutral-medium);
   --sky-override-sectioned-form-content-padding: var(--sky-padding-even-md)
     var(--sky-padding-even-xl);
-  --sky-override-sectioned-form-modal-margin-adjustment: -15px;
+  --sky-override-sectioned-form-modal-margin-adjustment: calc(#{$sky-padding} * -1);
   --sky-override-sectioned-form-tabs-only-padding: var(--sky-padding-even-md);
   --sky-override-sectioned-form-tabs-padding: 0;
 }
@@ -79,7 +79,7 @@
 
 :host-context(sky-modal) {
   .sky-sectioned-form {
-    min-height: 460px;
+    min-height: var(--sky-size-modal-min-height);
   }
 }
 

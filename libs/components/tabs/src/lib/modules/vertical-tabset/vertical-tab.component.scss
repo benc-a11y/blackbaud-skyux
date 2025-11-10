@@ -16,10 +16,10 @@
     #{$sky-margin-half};
   --sky-override-vertical-tab-padding: #{$sky-padding-3_4} 0 #{$sky-padding-3_4}
     #{$sky-padding};
-  --sky-override-vertical-tab-padding-left-selected: 6px;
+  --sky-override-vertical-tab-padding-left-selected: #{$sky-padding-half};
   --sky-override-vertical-tab-right-arrow-color: #{$sky-text-color-deemphasized};
   --sky-override-vertical-tab-right-arrow-color-selected: #{$sky-text-color-deemphasized};
-  --sky-override-vertical-tab-right-arrow-padding: 3px #{$sky-padding} 0 0;
+  --sky-override-vertical-tab-right-arrow-padding: var(--sky-space-3xs) #{$sky-padding} 0 0;
 }
 
 .sky-vertical-tab {
