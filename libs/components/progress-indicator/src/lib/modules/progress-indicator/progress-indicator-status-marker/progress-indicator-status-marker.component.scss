@@ -9,7 +9,7 @@
   --sky-override-progress-indicator-status-marker-before-display: block;
   --sky-override-progress-indicator-status-marker-horizontal-icon-height: #{$sky-margin-plus-half};
   --sky-override-progress-indicator-status-marker-horizontal-padding-left: 5px;
-  --sky-override-progress-indicator-status-marker-icon-active-color: #5a9936;
+  --sky-override-progress-indicator-status-marker-icon-active-color: #{$sky-highlight-color-success};
   --sky-override-progress-indicator-status-marker-icon-border-color: var(
     --sky-border-color-neutral-medium
   );
@@ -17,13 +17,13 @@
   --sky-override-progress-indicator-status-marker-icon-border-width: 2px;
   --sky-override-progress-indicator-status-marker-icon-margin-left: -1px;
   --sky-override-progress-indicator-status-marker-icon-margin-top: 1px;
-  --sky-override-progress-indicator-status-marker-icon-pending-color: #5a9936;
+  --sky-override-progress-indicator-status-marker-icon-pending-color: #{$sky-highlight-color-success};
   --sky-override-progress-indicator-status-marker-icon-size: #{$sky-margin-plus-half};
-  --sky-override-progress-indicator-status-marker-icon-success-color: #5a9936;
+  --sky-override-progress-indicator-status-marker-icon-success-color: #{$sky-highlight-color-success};
   --sky-override-progress-indicator-status-marker-line-color: var(
     --sky-border-color-neutral-medium
   );
-  --sky-override-progress-indicator-status-marker-line-complete-color: #5a9936;
+  --sky-override-progress-indicator-status-marker-line-complete-color: #{$sky-highlight-color-success};
   --sky-override-progress-indicator-status-marker-line-width: 1px;
   --sky-override-progress-indicator-status-marker-margin-right: #{$sky-margin-plus-half};
   --sky-override-progress-indicator-status-marker-status-active-icon-border-color: transparent;
@@ -132,7 +132,7 @@
           );
           width: 5px;
           height: 1px;
-          background-color: #5a9936;
+          background-color: $sky-highlight-color-success;
           position: absolute;
           left: -7px;
           top: 5px;
